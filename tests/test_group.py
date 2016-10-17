@@ -4,9 +4,8 @@
 
 from random import randrange
 
-import pytest
-import time
 import uuid
+import pytest
 
 from pages.home_page import Home
 
@@ -46,7 +45,7 @@ class TestGroup:
         home_page.login(vouched_user['email'], vouched_user['password'])
 
         # Create a new group
-        group_name = (time.strftime('%x-%X'))
+        group_name = (uuid.uuid4())
         settings = home_page.header.click_settings_menu_item()
         group = settings.create_group(group_name)
 
@@ -64,7 +63,7 @@ class TestGroup:
         home_page.login(vouched_user['email'], vouched_user['password'])
 
         # Create a new group
-        group_name = (time.strftime('%x-%X'))
+        group_name = (uuid.uuid4())
         settings = home_page.header.click_settings_menu_item()
         group = settings.create_group(group_name)
 
@@ -80,7 +79,7 @@ class TestGroup:
         home_page.login(vouched_user['email'], vouched_user['password'])
 
         # Create a new group
-        group_name = (time.strftime('%x-%X'))
+        group_name = (uuid.uuid4())
         settings = home_page.header.click_settings_menu_item()
         group = settings.create_group(group_name)
 
